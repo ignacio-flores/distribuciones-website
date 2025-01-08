@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>¿Cómo se distribuye el crecimiento económico en Latinoamérica?</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img class='nb' src='images/LOGO_Distribuciones_Red.png' style='height: 100%;'></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-question"></span>
+     
+    Nuestro proyecto
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-hand-holding-usd"></span>
+     
+    Explorar datos
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="predistribucion.html">Predistribución</a>
+    </li>
+    <li>
+      <a href="redistribucion.html">Redistribución</a>
+    </li>
+    <li>
+      <a href="distribucion.html">Ingreso disponible</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="descarga.html">
+    <span class="fa fa-download"></span>
+     
+    Descargar bases
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">¿Cómo se distribuye el crecimiento
+económico en Latinoamérica?</h1>
+<h4 class="author">Mauricio De Rosa, Ignacio Flores y Marc Morgan</h4>
+
+</div>
+
+
+<p><br> <em><strong>distribuciones.info</strong> Explora y descarga
+datos sobre la distribución del ingreso, de los impuestos, y de las
+transferencias en América Latina. Se basan en artículos de investigación
+recientes que buscan capturan mejor a los estratos más ricos, que
+típicamente se encuentran mal retratados en las encuestas a hogares</em>
+<br></p>
+<div id="explorar-datos" class="section level1">
+<h1><br> Explorar datos</h1>
+<p><a href="predistribucion.html">Accede inmediatamente a la exploración
+de datos</a>, también puedes utilizar el menú o escoger una de las
+secciones aquí abajo. Si quieres conocer más detalles sobre el proyecto,
+los datos y nuestro equipo, sigue navegando en esta página.</p>
+<p><br></p>
+<div
+id="cómo-ha-evolucionado-la-desigualdad-de-mercado-en-latinoamérica"
+class="section level3">
+<h3>¿Cómo ha evolucionado la desigualdad de mercado en
+Latinoamérica?</h3>
+<div id="viz1649950257737" class="tableauPlaceholder"
+style="position: relative">
+<noscript>
+<p><a href='#'><img src="https://public.tableau.com/static/images/di/distribuciones_org/PreD3/1_rss.png" alt="PreD3 " style="border: none"/></a></p>
+</noscript>
+<object class="tableauViz" style="display:none;">
+<p><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+<param name='embed_code_version' value='3' />
+<param name='site_root' value='' /><param name='name' value='distribuciones_org&#47;PreD3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;di&#47;distribuciones_org&#47;PreD3&#47;1.png' />
+<param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></p>
+</object>
+</div>
+<script type='text/javascript'>                    var divElement = document.getElementById('viz1649950257737');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1100px';vizElement.style.width='100%';vizElement.style.height='627px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1100px';vizElement.style.width='100%';vizElement.style.height='627px';} else { vizElement.style.width='100%';vizElement.style.height='677px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<p><br> <a href="predistribucion.html">&gt;&gt; Profundizar sobre la
+predistribución del ingreso</a> <br></p>
+</div>
+<div id="cómo-se-distribuye-la-carga-impositiva-y-los-beneficios"
+class="section level3">
+<h3>¿Cómo se distribuye la carga impositiva y los beneficios?</h3>
+<div id="viz1649950408436" class="tableauPlaceholder"
+style="position: relative">
+<noscript>
+<a href='#'><img alt='ReD1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;di&#47;distribuciones_org&#47;ReD1&#47;1_rss.png' style='border: none' /></a>
+</noscript>
+<object class="tableauViz" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+<param name='embed_code_version' value='3' />
+<param name='site_root' value='' /><param name='name' value='distribuciones_org&#47;ReD1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;di&#47;distribuciones_org&#47;ReD1&#47;1.png' />
+<param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' />
+</object>
+</div>
+<script type='text/javascript'>                    var divElement = document.getElementById('viz1649950408436');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1100px';vizElement.style.width='100%';vizElement.style.height='627px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1100px';vizElement.style.width='100%';vizElement.style.height='627px';} else { vizElement.style.width='100%';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<p><br> <a href="redistribucion.html">&gt;&gt; Analizar la
+redistribución del ingreso a través de impuestos y beneficios</a>
+<br></p>
+</div>
+<div id="cómo-se-distribuye-el-ingreso-imponible"
+class="section level3">
+<h3>¿Cómo se distribuye el ingreso imponible?</h3>
+<div id="viz1650053372994" class="tableauPlaceholder"
+style="position: relative">
+<noscript>
+<a href='#'><img alt='D3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;di&#47;distribuciones_org&#47;D3&#47;1_rss.png' style='border: none' /></a>
+</noscript>
+<object class="tableauViz" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+<param name='embed_code_version' value='3' />
+<param name='site_root' value='' /><param name='name' value='distribuciones_org&#47;D3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;di&#47;distribuciones_org&#47;D3&#47;1.png' />
+<param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' />
+</object>
+</div>
+<script type='text/javascript'>                    var divElement = document.getElementById('viz1650053372994');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1100px';vizElement.style.width='100%';vizElement.style.height='627px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1100px';vizElement.style.width='100%';vizElement.style.height='627px';} else { vizElement.style.width='100%';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<p><br> <a href="distribucion.html">&gt;&gt; Explorar más datos sobre el
+ingreso disponible y el poder de compra</a> <br></p>
+</div>
+</div>
+<div id="investigando-distribuciones" class="section level1">
+<h1><br> Investigando distribuciones</h1>
+<p>La investigación económica se ha enfocado principalmente en el
+crecimiento de los países, descuidando preguntas sobre la distribución
+del mismo entre sus hogares. Existe una desconexión fundamental entre
+las estadísticas macroeconómicas que miden los flujos de ingresos y la
+acumulación de riqueza, y aquellas que miden su distribución. <strong>La
+falta de coherencia en los datos oficiales dificulta una evaluación
+transparente de las políticas públicas orientadas a reducir las brechas
+de oportunidades.</strong> En nuestro sitio web, tanto un público
+general como especialistas, podrán interactuar con datos provenientes de
+estudios que han logrado avances relevantes en este tema.</p>
+<div id="conclusiones-principales" class="section level2">
+<h2><br> Conclusiones principales</h2>
+<p><strong>Distribución de ingresos (flujos)</strong> Los datos revelan
+una dicotomía fundamental: <strong>los países de América Latina tienen
+que ser o más pobres de lo que se creía, o más desiguales, dos opciones
+mutuamente exclusivas</strong>. La dicotomía se debe a que las
+estadísticas oficiales sobre desigualdad, basadas en encuestas, capturan
+sólo la mitad del ingreso macroeconómico y subestiman los ingresos del
+capital. Esto genera una imagen de una sociedad aparentemente más pobre
+pero menos desigual. Por otro lado, las estadísticas macroeconómicas
+muestran países más ricos pero con mayores ingresos del capital. Al
+corregir este sesgo, incluso con supuestos conservadores, la desigualdad
+aumenta considerablemente.</p>
+<p><strong>Las tendencias de concentración también cambian en algunos
+países</strong>. Los países más grandes y con mayor peso económico
+dibujan una trayectoría estable en niveles extremos de concentración
+económica, mientras que otros países de menor población parecen haber
+disminuído sus niveles de desigualdad desde el año 2000.</p>
+<p>Más abajo, ofrecemos referencias para aquellos que deseen profundizar
+en las fuentes, métodos y hallazgos relacionados con la investigación
+que respalda las cifras presentadas en nuestro sitio. Nuestras
+estimaciones forman parte de un proyecto global para construir cuentas
+nacionales distributivas, buscando la coherencia entre los datos de
+desigualdad y el monitoreo del crecimiento económico.</p>
+</div>
+<div id="qué-contiene-este-sitio" class="section level2">
+<h2><br> ¿Qué contiene este sitio?</h2>
+<p>Aquí podrás explorar interactivamente datos sobre la distribución del
+ingreso en los países de América Latina. Por ahora, el sitio se divide
+en tres partes que profundizan sobre el tema. En el futuro, planeamos
+seguir ampliando el abaníco de estadísticas, para estudiar no solamente
+los flujos, sino que también los stocks de riqueza.</p>
+<ul>
+<li><p>En la primera parte, analizamos la <a
+href="predistribucion.html">predistribución del ingreso</a>, donde se
+retratan los ingresos generados por los mercados antes de la
+intervención fiscal. Lo cual nos ayudará a entender cómo se distribuye
+inicialmente el ingreso y cómo esto puede influir en la estructura de la
+redistribución.</p></li>
+<li><p>La segunda parte se centra en la <a
+href="redistribucion.html">redistribución del ingreso</a>, considerando
+los impuestos y prestaciones sociales de cada país. Exploraremos cómo
+estas medidas impactan en la distribución general del ingreso, lo cual
+nos permitirá evaluar la efectividad de los programas implementados y
+comprender su incidencia distributiva en relación a sus propios
+objetivos.</p></li>
+<li><p>En la tercera parte, enfocamos la <a
+href="distribucion.html">distribución del ingreso disponible</a>. Aquí
+examinaremos los resultados finales después de tener en cuenta todas las
+sumas y restas derivadas de la redistribución. Esta sección nos ayudará
+a comprender mejor cómo se distribuye la capacidad económica entre los
+individuos.</p></li>
+</ul>
+<p>Te invitamos a explorar los datos sobre la distribución del ingreso
+en América Latina, que busca proporcionar una visión más completa de la
+realidad económica de la región. Puedes clickear en el menú desplegable
+en la esquina superior derecha, o directamente clickeando el nombre de
+cada una de las secciones para empezar a interactuar con los datos.</p>
+</div>
+</div>
+<div id="detalles-técnicos" class="section level1">
+<h1><br> Detalles técnicos</h1>
+<p>En la sección de ingresos, presentamos datos que se fundamentan en
+artículos de investigación académica. Estas referencias serán
+fundamentales para aquellos que deseen profundizar en los aspectos
+técnicos de nuestra investigación. Recomendamos su lectura como una
+fuente útil de información adicional. A continuación, un resumen de
+ciertos aspectos técnicos.</p>
+<div id="cómo-descargar-datos" class="section level2">
+<h2><br> ¿Cómo descargar datos?</h2>
+<p>Visita nuestra página dedicada clickeando <a
+href="descarga.html">aqui</a></p>
+</div>
+<div id="cómo-citar-nuestros-datos" class="section level2 tabset">
+<h2 class="tabset"><br> ¿Cómo citar nuestros datos?</h2>
+<p>Ofrecemos la posibilidad de seleccionar pestañas interactivas para
+elegir el tipo de referencia y las fuentes que deseen citar. Nuestras
+opciones de referencia incluyen cuatro estilos APA, MLA, Chicago y
+BibTeX. Las pestañas permiten elegir el estilo preferido y generar citas
+formateadas de acuerdo con los estándares típicos.</p>
+<div id="apa" class="section level3">
+<h3>APA</h3>
+<pre class="r"><code>#Datos sobre ingresos y comparaciones de fuentes
+
+De Rosa, M., Flores, I., &amp; Morgan, M. (2024). More unequal or not as rich? Revisiting the Latin American exception. World Development, 184, 106737.
+
+Alvaredo, F., De Rosa, M., Flores, I., &amp; Morgan, M. (2022, March 23). The Inequality (or the Growth) We Measure: Data Gaps and the Distribution of Incomes. https://doi.org/10.31235/osf.io/fs5jn</code></pre>
+</div>
+<div id="mla" class="section level3">
+<h3>MLA</h3>
+<pre class="r"><code>#Datos sobre ingresos y comparaciones de fuentes 
+
+De Rosa, Mauricio, Ignacio Flores, and Marc Morgan. “More unequal or not as rich? Revisiting the Latin American exception.” World Development 184 (2024): 106737.
+
+Alvaredo, Facundo, et al. “The Inequality (or the Growth) We Measure: Data Gaps and the Distribution of Incomes.” SocArXiv, 23 Mar. 2022. Web.</code></pre>
+</div>
+<div id="chicago" class="section level3">
+<h3>Chicago</h3>
+<pre class="r"><code>#Datos sobre ingresos y comparaciones de fuentes 
+
+De Rosa, Mauricio, Ignacio Flores, and Marc Morgan. 2024. “More Unequal or Not as Rich? Revisiting the Latin American Exception.” World Development. 2024: 106737
+
+Alvaredo, Facundo, Mauricio De Rosa, Ignacio Flores, and Marc Morgan. 2022. “The Inequality (or the Growth) We Measure: Data Gaps and the Distribution of Incomes.” SocArXiv. March 23. doi:10.31235/osf.io/fs5jn.</code></pre>
+</div>
+<div id="bibtex" class="section level3">
+<h3>BibTex</h3>
+<pre class="r"><code>#Datos sobre ingresos y comparaciones de fuentes 
+
+@article{derosa_flores_morgan_2024more,
+  title={More unequal or not as rich? Revisiting the Latin American exception},
+  author={De Rosa, Mauricio and Flores, Ignacio and Morgan, Marc},
+  journal={World Development},
+  volume={184},
+  pages={106737},
+  year={2024},
+  publisher={Elsevier}
+}
+ 
+ @misc{alvaredo_derosa_flores_morgan_2022,
+ title={The Inequality (or the Growth) We Measure: Data Gaps and the Distribution of Incomes},
+ url={osf.io/preprints/socarxiv/fs5jn},
+ DOI={10.31235/osf.io/fs5jn},
+ publisher={SocArXiv},
+ author={Alvaredo, Facundo and De Rosa, Mauricio and Flores, Ignacio and Morgan, Marc},
+ year={2022},
+ month={Mar}
+}</code></pre>
+</div>
+</div>
+<div id="metodología-y-definiciones" class="section level2">
+<h2><br> Metodología y definiciones</h2>
+<p><a
+href="https://wid.world"><img src="images/LOGO_WID_Blue.png" style="width: 30%"></a></p>
+<p>En el marco de las Cuentas Nacionales de Distribución (DINA), se
+describe la distribución del ingreso macroeconómico anual de los países.
+Esto permite realizar comparaciones internacionales con diez países de
+América Latina y varios más en otras regiones. Algunos de los datos
+correspondientes también están disponibles en la <a
+href="https://wid.world"><em>World Inequality Database</em></a>. Sin
+embargo, los datos presentados en este sitio se distinguen por incluir
+dimensiones adicionales. Esto abarca una mayor variedad en las unidades
+de observación, la incorporación de variables suplementarias y una total
+transparencia en los distintos pasos de ajuste aplicados para llegar al
+dato final. Estos elementos enriquecen el análisis, proporcionando una
+comprensión más amplia y detallada de la distribución del ingreso en
+diferentes contextos.</p>
+<p>Nuestras estimaciones se construyen utilizando información de
+encuestas a hogares armonizadas por la Comisión Económica para América
+Latina y el Caribe de las Naciones Unidas (CEPAL), también usando datos
+provenientes de autoridades fiscales de cada país y de las cuentas
+nacionales de cada economía. Estos resultados –que siguen en proceso de
+mejora– son el fruto de un trabajo interinstitucional en el que tanto
+CEPAL como las autoridades fiscales de cada país han sido actores
+centrales.</p>
+<p>El proceso de ajuste de datos sobre desigualdad consta de cuatro
+pasos clave:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Estimaciones de base</strong>: Se presentan las
+estimaciones iniciales basadas en las encuestas de hogares armonizadas
+por la CEPAL.</p></li>
+<li><p><strong>Corrección mediante registros tributarios</strong>: Se
+ajustan las encuestas para mejorar la medición de los ingresos más altos
+utilizando información proporcionada por las autoridades fiscales de
+cada país. Estos registros tributarios proporcionan una perspectiva más
+precisa de los ingresos más elevados.</p></li>
+<li><p><strong>Ajuste a cuentas nacionales</strong>: Cada componente del
+ingreso total se ajusta a su agregado correspondiente en las cuentas
+nacionales de la economía. Esto implica alinear los diferentes tipos de
+ingresos (salarios, ingresos de propiedad, ingresos mixtos, pensiones y
+rentas imputadas) con los datos reportados en las cuentas
+nacionales.</p></li>
+<li><p><strong>Imputación de ingresos corporativos y
+gubernamentales</strong>: Los ingresos generados por el sector
+corporativo y el gobierno general se asignan a la distribución del
+ingreso de los hogares. Esto permite tener en cuenta estos ingresos
+adicionales y obtener una imagen más completa de la distribución del
+ingreso a nivel nacional.</p></li>
+</ol>
+<p>Es importante destacar que durante todo el proceso se mantiene un
+alto nivel de confidencialidad y protección de datos. Hemos firmado un
+acuerdos de confidencialidad y transferencia de datos con CEPAL, y con
+algunas autoridades fiscales de los países, para garantizar la seguridad
+y el manejo adecuado de la información recopilada. Para mayores
+detalles, por favor referirse a la literatura referenciada.</p>
+</div>
+</div>
+<div id="nuestro-equipo" class="section level1">
+<h1><br> Nuestro equipo</h1>
+<p>Nuestro equipo se compone de investigadores que se desempeñan
+profesionalmente en la academia y en la producción de datos. Cada
+miembro desempeña un papel fundamental en el proyecto y en la generación
+de resultados. A continuación, te presentamos a nuestros miembros.</p>
+<div
+style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+<div style="width: 40%; margin: 10px 10px;">
+<button data-toggle="collapse" data-target="#parriagada">
+<img src="images/parriagada_sq.jpg" alt="Pablo Arriagada" />
+<strong>Pablo Arriagada</strong>
+</button>
+<div id="parriagada" class="collapse">
+<p>Pablo trabaja en <a href="https://ourworldindata.org">Our World in
+Data</a>. Él ha liderado la producción de todas las visualizaciones de
+datos en este sitio. Es MPA in Public and Economic Policy de <em>London
+School of Economics</em> (LSE)</p>
+</div>
+</div>
+<div style="width: 40%; margin: 10px 10px">
+<button data-toggle="collapse" data-target="#mderosa">
+<img src="images/mderosa_sq.png" alt="Mauricio De Rosa" />
+<strong>Mauricio De Rosa</strong>
+</button>
+<div id="mderosa" class="collapse">
+<p>Mauricio Es investigador y docente del IECON de la Universidad de la
+República de Uruguay. Es doctor en economía de la <em>Paris School of
+Economics</em>. <a
+href="https://iecon.fcea.udelar.edu.uy/es/integrantes/docentes/item/de-rosa-mauricio.html">Sitio
+web institucional</a></p>
+</div>
+</div>
+</div>
+<div
+style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+<div style="width: 40%; margin: 10px 10px">
+<button data-toggle="collapse" data-target="#iflores">
+<img src="images/iflores_sq.png" alt="Marc Morgan" /> <strong>Ignacio
+Flores</strong>
+</button>
+<div id="iflores" class="collapse">
+<p>Ignacio es investigador en <em>City University of New York</em>
+(CUNY) y en <em>Paris School of Economics</em> (PSE), donde también se
+desempeña como coordinador regional para América Latina en el <a
+href="https://inequalitylab.world/en/">World Inequality Lab</a>. Es
+doctor en economía de la universidad <em>Paris 1 Panthéon-Sorbonne</em>.
+<a href="https://www.ignacioflores.com">Sitio web personal</a></p>
+</div>
+</div>
+<div style="width: 40%; margin: 10px 10px">
+<button data-toggle="collapse" data-target="#mmorgan">
+<img src="images/mmorgan_sq.jpeg" alt="Marc Morgan" /> <strong>Marc
+Morgan</strong>
+</button>
+<div id="mmorgan" class="collapse">
+<p>Marc es investigador y docente en la Universidad de Ginebra (UNIGE).
+Es doctor en economía de la Paris School of Economics (PSE). <a
+href="https://www.marc-morgan.eu">Sitio web personal</a></p>
+</div>
+</div>
+</div>
+<p><br>Si deseas saber más sobre nuestros colaboradores y el trabajo que
+realizan en sus respectivas áreas, te invitamos a clickear sobre sus
+fotos.</p>
+</div>
+<div id="organizaciones-relacionadas" class="section level1">
+<h1><br> Organizaciones relacionadas</h1>
+<p>Nuestro trabajo es fruto de la colaboración y el financiamiento de
+varias instituciones universitarias</p>
+<div
+style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+<p><a
+href="https://inequalitylab.world/en/"><img src="images/WIL-points-noirs-png.jpg" style="width:15%"></a>
+<a
+href="https://www.parisschoolofeconomics.eu"><img src="images/logo_pse_new.png" style="width: 20%"></a>
+<a
+href="https://www.gc.cuny.edu"><img src="images/logo-gc.png" style="width: 25%"></a>
+<a
+href="https://stonecenter.gc.cuny.edu"><img src="images/logo-stone.png" style="width: 25%"></a>
+<a
+href="https://www.unige.ch"><img src="images/logo_unige.jpeg" style="width: 25%"></a>
+<a
+href="https://centrocontribuye.org"><img src="images/logo-contribuye.jpeg" style="width: 25%"></a>
+<a
+href="https://iecon.fcea.udelar.edu.uy/en/"><img src="images/IECON_FCEA_UdelaR_rgb.png" style="width: 40%"></a></p>
+</div>
+<p><br></p>
+<style>
+  .pager {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .pager li {
+    display: inline;
+  }
+</style>
+<ul class="pager">
+<li class="next">
+<a href="predistribucion.html">Siguiente →</a>
+</li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
